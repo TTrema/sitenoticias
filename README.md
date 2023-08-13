@@ -1,5 +1,6 @@
 ﻿# Site de notícias feito com AngularJS
 
+Feito usando a API do newsapi.org.
 
 ## Demonstração:
 

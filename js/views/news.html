@@ -1,0 +1,49 @@
+
+<div class="section-tittle mb-30">
+    <h3>Últimas notícias</h3>
+</div>
+
+<div class="row">
+    <div class="col-lg-8">
+        <!-- Trending Top -->
+        <div class="trending-top mb-30" ng-repeat="article in articles" ng-if="$index == 0">
+            <div class="trend-top-img">
+                <img ng-src="{{ article.urlToImage }}" alt="" class="highlight-image">
+                <div class="trend-top-cap">
+                    <span>{{ article.source.name }}</span>
+                    <h2><a ng-href="{{ article.url }}">{{ article.title }}</a></h2>
+                </div>
+            </div>
+        </div>
+        <!-- Trending Bottom -->
+        <div class="trending-bottom">
+            <div class="row">
+               <div class="col-lg-4" ng-repeat="article in articles" ng-if="$index >= 1 && $index <= 3">
+                <div class="single-bottom mb-35">
+                    <div class="trend-bottom-img mb-30">
+                        <img ng-src="{{ article.urlToImage }}" alt="" class="news-image">
+                    </div>
+                    <div class="trend-bottom-cap">
+                        <span class="color1">{{ article.source.name }}</span>
+                        <h4><a ng-href="{{ article.url }}">{{ article.title }}</a></h4>
+                    </div>
+                </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Riht content -->
+    <div class="col-lg-4">
+        <div class="trand-right-single d-flex"  ng-repeat="article in articles" ng-if="$index >= 4 && $index <= 8">
+            <div class="trand-right-img">
+                <img ng-src="{{ article.urlToImage }}" alt="" class="newsside-image">
+            </div>
+            <div class="trand-right-cap">
+                <span class="color2">{{ article.source.name }}</span>
+                <h4><a ng-href="{{ article.url }}">{{ article.title | limitTo: 40 }}{{ article.title.length > 40 ? '...' : '' }}</a></h4>
+            </div>
+        </div>
+
+    </div>
+</div>
